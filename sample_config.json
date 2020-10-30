@@ -1,0 +1,33 @@
+{
+  "disable_collection": true,
+  "cache_template_dir": "/temp/mako_modules",
+  "template_dir": "target-mako/templates",
+  "output_dir": "target-mako/output",
+  "template_list": [
+  ],
+  "stream_configs": {
+    "sample": {
+      "template_dir": "target-mako/templates",
+      "output_dir": "target-mako/output",
+      "template_list": [
+        {
+          "header_template_name": "csv/sample_header.template.csv",
+          "data_template_name": "csv/sample.template.csv",
+          "footer_template_name": "",
+          "output_file_name": "sample.csv",
+          "output_file_encoding": "utf8",
+          "output_file_EOL": "\r\n"
+        },
+        {
+          "header_template_name": "json/sample_header.template.json",
+          "data_template_name": "json/sample.template.json",
+          "footer_template_name": "json/sample_footer.template.json",
+          "output_file_name": "sample{record_index}.json",
+          "output_file_encoding": "utf8",
+          "output_file_EOL": "\r\n",
+          "one_file_per_record": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+    {
+      "My-ID": "${record.id}",
+      "My-Name": "${record.name}",
+      "Checked": ${1 if record.checked else 0},
+      "hour": "${record.hour}",
+      "details": {
+        "dimensions-height": ${record.dimensions.height},
+        "dimensions-width": ${record.dimensions.width},
+        "color": "${record.color}",
+        "price": "${record.price} EUR",
+        "tags": [
+          % for tag in record.tags:
+                {
+                  "tag-value": "${functions['lower'](tag)}"
+                },
+          % endfor
+        ]
+      }
+    },

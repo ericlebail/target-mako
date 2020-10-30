@@ -1,0 +1,5 @@
+${record.id};${record.name};${1 if record.checked else 0};${record.hour};${record.dimensions.height};${record.dimensions.width};${record.color};${record.price} EUR;\
+% for tag in record.tags:
+ ${tag} |\
+% endfor
+;${u'${i}'}
