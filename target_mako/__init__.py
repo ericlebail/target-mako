@@ -156,7 +156,8 @@ def load_template_from_config(config, template_lookup, template_list):
 def load_template_list_from_config(config, stream):
     LOGGER.info("Loading templates for stream : " + stream)
     template_dir = load_config_for_stream(config, 'template_dir', stream)
-    template_lookup = TemplateLookup([get_abs_path(template_dir)], config['cache_template_dir'])
+    # preprocessor is there to remove extra line inside generated content (On windows machines).
+    template_lookup = TemplateLookup(directories=[get_abs_path(template_dir)], module_directory=config['cache_template_dir'], preprocessor=[lambda x: x.replace("\r\n", "\n")])
     template_config_list = load_config_for_stream(config, 'template_list', stream)
     template_list = []
     for template_config in template_config_list:
