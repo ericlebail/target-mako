@@ -181,7 +181,7 @@ def open_output_file_list(config, template_list, stream):
             output_filename = templates['output_filename']
             output_file_path = get_abs_path(output_dir) + '/' + output_filename
             directory = os.path.dirname(output_file_path)
-            Path(directory).mkdir(parents=True, exist_ok=True)
+            os.makedirs(directory, exist_ok=True)
             output_file = open(output_file_path, "w+", encoding=output_file_encoding, newline=output_file_EOL)
             output_file_list[output_filename] = output_file
     return output_file_list
@@ -271,6 +271,8 @@ def get_or_open_file_for_template(config, one_file_per_record, output_file_list,
         output_file_EOL = "\r\n"
         if "output_file_EOL" in templates:
             output_file_EOL = templates['output_file_EOL']
+        directory = os.path.dirname(output_file_path)
+        os.makedirs(directory, exist_ok=True)
         output_file = open(output_file_path, "w+", encoding=output_file_encoding, newline=output_file_EOL)
     return output_file
 
