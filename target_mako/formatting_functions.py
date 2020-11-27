@@ -6,6 +6,9 @@ def create_rendering_functions():
         'format_date': format_date,
         'format_json_date': format_json_date,
         'fixed_size': fixed_size,
+        'lfixed': lfixed,
+        'rfixed': rfixed,
+        'nfixed': nfixed,
         'null_safe': null_safe,
         'lower': lower,
         'upper': upper
@@ -25,9 +28,21 @@ def format_json_date(input_value, date_format):
     return format_date(input_value, '%Y-%m-%d', date_format)
 
 
-def fixed_size(input_value, string_size):
+def fixed_size(input_value, string_size, prefix="{:<", postfix="}"):
     json_string = str(input_value)
-    return ("{:<" + str(string_size) + "}").format(json_string[:string_size])
+    return (prefix + str(string_size) + postfix).format(json_string[:string_size])
+
+
+def lfixed(input_value, string_size):
+    return fixed_size(input_value, string_size)
+
+
+def rfixed(input_value, string_size):
+    return fixed_size(input_value, string_size, "{:>")
+
+
+def nfixed(input_value, string_size):
+    return fixed_size(input_value, string_size, "{:0>")
 
 
 def null_safe(json_number):

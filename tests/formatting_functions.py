@@ -1,4 +1,5 @@
-from target_mako.formatting_functions import format_json_date, fixed_size, null_safe, format_date, lower, upper
+from target_mako.formatting_functions import format_json_date, fixed_size, null_safe, format_date, lower, upper, lfixed, \
+    nfixed, rfixed
 
 
 def test_format_date():
@@ -78,6 +79,149 @@ def test_fixed_size_number():
     # then
     assert result is not None
     assert string_size == len(result)
+
+
+def test_lfixed_smaller():
+    # given
+    json_string = "some content"
+    string_size = 30
+    # when
+    result = lfixed(json_string, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "some content                  " == result
+
+
+def test_lfixed_bigger():
+    # given
+    json_string = "some content"
+    string_size = 5
+    # when
+    result = lfixed(json_string, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "some " == result
+
+
+def test_lfixed_integer():
+    # given
+    json_integer = 123
+    string_size = 30
+    # when
+    result = lfixed(json_integer, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "123                           " == result
+
+
+def test_lfixed_number():
+    # given
+    json_number = 123.0
+    string_size = 30
+    # when
+    result = lfixed(json_number, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "123.0                         " == result
+
+
+def test_rfixed_smaller():
+    # given
+    json_string = "some content"
+    string_size = 30
+    # when
+    result = rfixed(json_string, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "                  some content" == result
+
+
+def test_rfixed_bigger():
+    # given
+    json_string = "some content"
+    string_size = 5
+    # when
+    result = rfixed(json_string, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "some " == result
+
+
+def test_rfixed_integer():
+    # given
+    json_integer = 123
+    string_size = 30
+    # when
+    result = rfixed(json_integer, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "                           123" == result
+
+
+def test_rfixed_number():
+    # given
+    json_number = 123.0
+    string_size = 30
+    # when
+    result = rfixed(json_number, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "                         123.0" == result
+
+
+def test_nfixed_smaller():
+    # given
+    json_string = "some content"
+    string_size = 30
+    # when
+    result = nfixed(json_string, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "000000000000000000some content" == result
+
+def test_nfixed_bigger():
+    # given
+    json_string = "some content"
+    string_size = 5
+    # when
+    result = nfixed(json_string, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "some " == result
+
+
+def test_nfixed_integer():
+    # given
+    json_integer = 123
+    string_size = 30
+    # when
+    result = nfixed(json_integer, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "000000000000000000000000000123" == result
+
+
+def test_nfixed_number():
+    # given
+    json_number = 123.0
+    string_size = 30
+    # when
+    result = nfixed(json_number, string_size)
+    # then
+    assert result is not None
+    assert string_size == len(result)
+    assert "0000000000000000000000000123.0" == result
 
 
 def test_null_safe_none():

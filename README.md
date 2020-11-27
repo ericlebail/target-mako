@@ -52,6 +52,30 @@ Second parameter is the required size (integer)
 
         ${functions['fixed_size'](record.attribute.sub-attribute, 27)}
 
+- Specify a fixed size for strings (align left)
+
+First parameter is the data to format (example: record.attribute.sub-attribute)
+
+Second parameter is the required size (integer)
+
+        ${functions['lfixed'](record.attribute.sub-attribute, 27)}
+        
+- Specify a fixed size for strings (align rigth)
+
+First parameter is the data to format (example: record.attribute.sub-attribute)
+
+Second parameter is the required size (integer)
+
+        ${functions['rfixed'](record.attribute.sub-attribute, 27)}
+        
+- Specify a fixed size for numbers (by adding 0 before the passed value)
+
+First parameter is the data to format (example: record.attribute.sub-attribute)
+
+Second parameter is the required size (integer)
+
+        ${functions['nfixed '](record.attribute.sub-attribute, 27)}
+
 - JSON Date formatting
 
 First parameter is the data to format (must be a JSON date YYYY-mm-dd)
