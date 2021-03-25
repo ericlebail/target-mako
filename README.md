@@ -16,7 +16,9 @@ This target
 ![Build status](https://travis-ci.com/ericlebail/target-mako.svg?branch=master)
 [![codecov](https://codecov.io/gh/ericlebail/target-mako/branch/master/graph/badge.svg?token=C37SIU1IUG)](https://codecov.io/gh/ericlebail/target-mako)
 
-[Sources on Github](https://github.com/ericlebail/target-mako) 
+[Sources on Github](https://github.com/ericlebail/target-mako)
+
+[Package on PyPI](https://pypi.org/project/target-mako/)
 
 ## Accessing data in templates:
 
