@@ -19,7 +19,7 @@ extras = {
 # do not modify version number it will be injected by build script
 setup(
     name="target-mako",
-    version="0.1.0",
+    version="1.0.0",
     description="Singer.io target for extracting data",
     long_description=long_description,
     long_description_content_type="text/markdown",
