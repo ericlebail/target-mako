@@ -32,7 +32,7 @@ setup(
     install_requires=[
         "singer-python==5.9.0",
         "jsonschema==2.6.0",
-        "Mako==1.1.3",
+        "Mako==1.1.4",
     ],
     tests_require=test_deps,
     extras_require=extras,

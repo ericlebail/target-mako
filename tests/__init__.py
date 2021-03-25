@@ -42,7 +42,7 @@ def test_load_template_from_config():
     # given
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules"
+        "cache_template_dir": "temp/mako_modules"
     }
     template_config = {
         "header_template_name": "csv/sample_header.template.csv",
@@ -73,7 +73,7 @@ def test_load_template_list_from_config():
     # given
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "template_list": [
             {
                 "header_template_name": "csv/sample_header.template.csv",
@@ -113,7 +113,7 @@ def test_load_template_list_from_config_stream_specific():
     # given
     config = {
         "template_dir": "default-templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "template_list": [
         ],
         "stream_configs": {
@@ -160,7 +160,7 @@ def test_open_output_file_list():
     # given
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "output",
         "template_list": [
             {
@@ -194,7 +194,7 @@ def test_open_output_file_list_stream_specific():
     # given
     config = {
         "template_dir": "default-templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "default-output",
         "template_list": [
         ],
@@ -259,7 +259,7 @@ def test_render_templates_for_record():
     one_file_per_record = False
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "output",
         "template_list": [
             {
@@ -293,7 +293,7 @@ def test_render_templates_for_record_no_header():
     one_file_per_record = False
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "output",
         "template_list": [
             {
@@ -325,7 +325,7 @@ def test_render_templates_for_record_no_line():
     one_file_per_record = False
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "output",
         "template_list": [
             {
@@ -356,7 +356,7 @@ def test_render_templates_for_record_one_file():
     one_file_per_record = True
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "output",
         "template_list": [
             {
@@ -382,7 +382,7 @@ def test_render_templates_for_record_missing_key():
     one_file_per_record = False
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "output",
         "template_list": [
             {
@@ -410,7 +410,7 @@ def test_render_footer_and_close():
     # given
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "output",
         "template_list": [
             {
@@ -433,7 +433,7 @@ def test_get_or_open_file_for_template():
     # given
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "output",
         "template_list": [
             {
@@ -474,7 +474,7 @@ def test_get_or_open_file_for_template_one_file():
     # given
     config = {
         "template_dir": "templates",
-        "cache_template_dir": "/temp/mako_modules",
+        "cache_template_dir": "temp/mako_modules",
         "output_dir": "output",
         "template_list": [
             {
