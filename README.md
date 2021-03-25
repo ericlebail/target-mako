@@ -13,6 +13,11 @@ This target
 - for each record, write one block rendered from the template (using the record data) in each output file
 - write the configured footer (if any) into each output files (Footer uses the last record values)
 
+![Build status](https://travis-ci.com/ericlebail/target-mako.svg?branch=master)
+[![codecov](https://codecov.io/gh/ericlebail/target-mako/branch/master/graph/badge.svg?token=C37SIU1IUG)](https://codecov.io/gh/ericlebail/target-mako)
+
+[Sources on Github](https://github.com/ericlebail/target-mako) 
+
 ## Accessing data in templates:
 
 - The record data can be used in the template with 

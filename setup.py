@@ -2,14 +2,9 @@
 from setuptools import setup, find_packages
 
 
-def license():
-    with open('LICENSE') as f:
-        return f.read()
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
-
-def readme():
-    with open('README.md') as f:
-        return f.read()
 
 test_deps = [
     "pytest==3.9.2",
@@ -26,12 +21,13 @@ setup(
     name="target-mako",
     version="0.1.0",
     description="Singer.io target for extracting data",
-    long_description=readme(),
-    ong_description_content_type="text/markdown",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     author="elebail",
-    url="http://singer.io",
-    license=license(),
-    classifiers=["Programming Language :: Python :: 3 :: Only"],
+    url="https://github.com/ericlebail/target-mako",
+    classifiers=["Programming Language :: Python :: 3 :: Only",
+        "License :: OSI Approved :: GNU Affero General Public License v3",
+        "Operating System :: OS Independent"],
     py_modules=["target_mako"],
     install_requires=[
         "singer-python==5.9.0",
