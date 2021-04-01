@@ -9,7 +9,6 @@ import string
 import sys
 import threading
 import urllib
-from pathlib import Path
 
 import pkg_resources
 import singer
@@ -17,6 +16,7 @@ from jsonschema.validators import Draft4Validator
 from mako import exceptions
 from mako.lookup import TemplateLookup
 
+from target_mako.dict_proxy import wrap_namespace
 from target_mako.formatting_functions import create_rendering_functions
 
 LOGGER = singer.get_logger()
@@ -157,7 +157,9 @@ def load_template_list_from_config(config, stream):
     LOGGER.info("Loading templates for stream : " + stream)
     template_dir = load_config_for_stream(config, 'template_dir', stream)
     # preprocessor is there to remove extra line inside generated content (On windows machines).
-    template_lookup = TemplateLookup(directories=[get_abs_path(template_dir)], module_directory=config['cache_template_dir'], preprocessor=[lambda x: x.replace("\r\n", "\n")])
+    template_lookup = TemplateLookup(directories=[get_abs_path(template_dir)],
+                                     module_directory=config['cache_template_dir'],
+                                     preprocessor=[lambda x: x.replace("\r\n", "\n")])
     template_config_list = load_config_for_stream(config, 'template_list', stream)
     template_list = []
     for template_config in template_config_list:
@@ -203,8 +205,8 @@ def process_record(config, line_index, line_number, o, outputs, schemas, templat
     # enrich record with processing specific values
     record_dict['record_index'] = line_index
     record_dict['record_number'] = line_number
-    record_values = TemplateValues(record_dict)
-    schema_values = TemplateValues(schema)
+    record_values = wrap_namespace(record_dict)
+    schema_values = wrap_namespace(schema)
     for templates in template_list:
         one_file_per_record = templates['one_file_per_record']
         output_file = get_or_open_file_for_template(config, one_file_per_record, output_file_list, record_dict,
