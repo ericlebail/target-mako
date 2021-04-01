@@ -21,7 +21,7 @@ This target
 
 [Sources on Github](https://github.com/ericlebail/target-mako)
 
-[Package on PyPI](https://pypi.org/project/target-mako/)
+[![Package on PyPI](https://img.shields.io/pypi/v/target-mako.svg)](https://pypi.org/project/target-mako/)
 
 ## Accessing data in templates:
 
