@@ -15,6 +15,9 @@ This target
 
 ![Build status](https://travis-ci.com/ericlebail/target-mako.svg?branch=master)
 [![codecov](https://codecov.io/gh/ericlebail/target-mako/branch/master/graph/badge.svg?token=C37SIU1IUG)](https://codecov.io/gh/ericlebail/target-mako)
+[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
+[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
 
 [Sources on Github](https://github.com/ericlebail/target-mako)
 
@@ -22,12 +25,12 @@ This target
 
 ## Accessing data in templates:
 
-- The record data can be used in the template with 
+- The record data can be used in the template with (Null/None values will be safely displayed as empty string)
 
         ${record.attribute.sub-attribute}
       
       
-- The schema data can be used in the template with 
+- The schema data can be used in the template with (Null/None values will be safely displayed as empty string)
 
         ${schema.attribute.sub-attribute}
         
