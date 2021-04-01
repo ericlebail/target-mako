@@ -7,11 +7,11 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 
 test_deps = [
-    "pytest==3.9.2",
+    "pytest==6.2.2",
+    "pytest-cov==2.11.1",
     "pytest-mock==1.10.0",
-    "pytest-html>=1.19.0,<2",
     "testfixtures==6.3.0",
-    "coverage==4.5.1"
+    "coverage==5.5"
 ]
 extras = {
     'test': test_deps,
@@ -19,7 +19,7 @@ extras = {
 # do not modify version number it will be injected by build script
 setup(
     name="target-mako",
-    version="1.1.0",
+    version="1.2.0",
     description="Singer.io target for extracting data",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -30,7 +30,7 @@ setup(
         "Operating System :: OS Independent"],
     py_modules=["target_mako"],
     install_requires=[
-        "singer-python==5.9.0",
+        "singer-python==5.12.1",
         "jsonschema==2.6.0",
         "Mako==1.1.4",
     ],
