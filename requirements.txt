@@ -10,8 +10,9 @@ Mako==1.1.4
 # dev dependencies
 ###########################################
 # testing
-coverage==4.5.1
-pytest==3.9.2
+coverage==5.5
+pytest==6.2.2
+pytest-cov==2.11.1
 pytest-mock==1.10.0
 pytest-html>=1.19.0,<2
 testfixtures==6.3.0
