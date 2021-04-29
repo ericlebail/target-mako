@@ -2,6 +2,8 @@ from functools import singledispatch
 from types import SimpleNamespace
 from typing import Any
 
+import singer
+
 
 @singledispatch
 def wrap_namespace(ob):
@@ -24,12 +26,15 @@ def _wrap_list(ob):
 class SafeNamespace(SimpleNamespace):
     def __getattribute__(self, name: str) -> Any:
         try:
+            logger = singer.get_logger()
             value = super(SafeNamespace, self).__getattribute__(name)
             if value is None:
+                logger.info("attribute : '" + name + "' is null returning empty value")
                 return SafeNone
             else:
                 return value
         except AttributeError:
+            logger.info("attribute : '" + name + "' doesn't exists returning empty value")
             return SafeNone
 
 
@@ -50,7 +55,9 @@ class Meta(type):
 
 
 class SafeNone(object, metaclass=Meta):
-    def __getattribute__(*args):
+    def __getattribute__(self, name):
+        logger = singer.get_logger()
+        logger.info("attribute : '" + name + "' doesn't exists returning empty value")
         return SafeNone()
 
     def __str__(self):
