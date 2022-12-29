@@ -15,9 +15,9 @@ This target
 
 ![Build status](https://travis-ci.com/ericlebail/target-mako.svg?branch=master)
 [![codecov](https://codecov.io/gh/ericlebail/target-mako/branch/master/graph/badge.svg?token=C37SIU1IUG)](https://codecov.io/gh/ericlebail/target-mako)
-[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-370/)
 [![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
+[![Python 3.10.2](https://img.shields.io/badge/python-3.10.2-blue.svg)](https://www.python.org/downloads/release/python-3102/)
 
 [Sources on Github](https://github.com/ericlebail/target-mako)
 
